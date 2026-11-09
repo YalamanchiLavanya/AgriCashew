@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Buyer Registration - AgriCashew</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2>🌱 AgriCashew</h2>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="farmer.html">Farmer</a>
+            <a href="buyer.html">Buyer</a>
+        </div>
+    </nav>
+
+    <section class="form-section">
+
+        <div class="form-card">
+
+            <h1>Buyer Registration 🛒</h1>
+            <p>Create your AgriCashew buyer account</p>
+
+            <form id="buyerForm">
+
+                <label>Buyer ID</label>
+                <input type="text" id="buyerId"
+                       placeholder="Enter Buyer ID" required>
+
+                <label>Full Name</label>
+                <input type="text" id="buyerName"
+                       placeholder="Enter your full name" required>
+
+                <label>Address</label>
+                <textarea id="buyerAddress"
+                          placeholder="Enter your address"
+                          required></textarea>
+
+                <label>Contact Number</label>
+                <input type="tel" id="buyerPhone"
+                       placeholder="Enter 10-digit mobile number"
+                       pattern="[0-9]{10}" required>
+
+                <label>Business Experience (Years)</label>
+                <input type="number" id="buyerExperience"
+                       placeholder="Enter experience"
+                       min="0" required>
+
+                <label>Password</label>
+                <input type="password" id="buyerPassword"
+                       placeholder="Create password" required>
+
+                <label>Confirm Password</label>
+                <input type="password" id="buyerConfirmPassword"
+                       placeholder="Confirm password" required>
+
+                <button type="submit" class="btn">
+                    Register
+                </button>
+
+            </form>
+
+            <p class="form-footer">
+                Already have an account?
+                <a href="buyer.html">Login</a>
+            </p>
+
+            <a href="buyer.html" class="back-link">
+                Back to Buyer Page
+            </a>
+
+        </div>
+
+    </section>
+
+    <script src="../static/js/script.js"></script>
+
+</body>
+</html>

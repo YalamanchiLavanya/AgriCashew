@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Farmer Dashboard - AgriCashew</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <h2>🌱 AgriCashew</h2>
+
+        <div class="nav-links">
+            <a href="farmer_dashboard.html">Dashboard</a>
+            <a href="farmer.html">Logout</a>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+
+        <!-- Dashboard Heading -->
+        <div class="dashboard-heading">
+            <div>
+                <h1>Farmer Dashboard 👨‍🌾</h1>
+                <p>Welcome back, Farmer!</p>
+            </div>
+
+            <button class="btn" type="button"
+                onclick="alert('Profile page coming soon!')">
+                My Profile
+            </button>
+        </div>
+         <!-- Weather Section -->
+<section class="dashboard-section">
+    <h2>🌤️ Farm Weather Information</h2>
+
+    <label for="farmAddress">Enter Your Farm Address:</label>
+
+    <input
+        type="text"
+        id="farmAddress"
+        placeholder="Example: Gokulam, Andhra Pradesh"
+    >
+
+    <button onclick="getWeather()">
+        Get Weather
+    </button>
+
+    <div id="weatherInfo">
+        <p>Enter your farm address to check weather.</p>
+    </div>
+</section>
+
+
+        <!-- Summary Cards -->
+        <div class="dashboard-cards">
+            <div class="dashboard-card">
+                <h3>🥜 Cashew Price</h3>
+                <h2>₹120/kg</h2>
+                <p>Grade: W320</p>
+                <p>Sample display price</p>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>🌾 My Harvest</h3>
+                <h2 id="totalHarvest">250 kg</h2>
+                <p>Available Quantity</p>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>🛒 Available Buyers</h3>
+                <h2>18</h2>
+                <p>Sample buyer count</p>
+            </div>
+
+        </div>
+       
+        <!-- Harvest Section -->
+        <div class="dashboard-section">
+
+            <h2>My Harvest Details</h2>
+
+            <button type="button" class="btn"
+                id="showHarvestForm">
+                + Add Harvest
+            </button>
+
+            <!-- Add Harvest Form -->
+            <div class="harvest-form"
+                id="harvestFormContainer" hidden>
+
+                <h3>Add New Harvest 🌾</h3>
+
+                <form id="harvestForm">
+
+                    <label for="harvestDate">Harvest Date</label>
+                    <input type="date"
+                        id="harvestDate" required>
+
+                    <label for="quantity">Quantity (kg)</label>
+                    <input type="number"
+                        id="quantity"
+                        placeholder="Enter quantity in kg"
+                        min="0.1"
+                        step="0.1"
+                        required>
+
+                    <label for="quality">Cashew Quality</label>
+                    <select id="quality" required>
+                        <option value="">Select Quality</option>
+                        <option value="W180">W180</option>
+                        <option value="W210">W210</option>
+                        <option value="W240">W240</option>
+                        <option value="W320">W320</option>
+                        <option value="W450">W450</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label for="price">Price per kg (₹)</label>
+                    <input type="number"
+                        id="price"
+                        placeholder="Enter price per kg"
+                        min="0.01"
+                        step="0.01"
+                        required>
+
+                    <label for="status">Availability Status</label>
+                    <select id="status" required>
+                        <option value="Available">Available</option>
+                        <option value="Sold">Sold</option>
+                    </select>
+
+                    <button type="submit" class="btn">
+                        Save Harvest
+                    </button>
+
+                    <button type="button"
+                        class="btn cancel-btn"
+                        id="cancelHarvestForm">
+                        Cancel
+                    </button>
+
+                </form>
+
+            </div>
+
+            <!-- Harvest Table -->
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Quantity</th>
+                            <th>Quality</th>
+                            <th>Price/kg</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="harvestTableBody">
+
+                        <tr>
+                            <td>09-11-2026</td>
+                            <td>150 kg</td>
+                            <td>W320</td>
+                            <td>₹120</td>
+                            <td>Available</td>
+                        </tr>
+
+                        <tr>
+                            <td>08-11-2026</td>
+                            <td>100 kg</td>
+                            <td>W240</td>
+                            <td>₹130</td>
+                            <td>Available</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+        <!-- Buyer Section -->
+        <div class="dashboard-section">
+
+            <h2>Available Buyers</h2>
+
+            <div class="buyer-list">
+
+                <div class="buyer-item">
+                    <h3>Ravi Cashew Traders</h3>
+                    <p>Location: Rajahmundry</p>
+                    <p>Rating: ⭐ 4.5/5</p>
+
+                    <button class="btn" type="button"
+                        onclick="alert('Contact feature coming soon!')">
+                        Contact Buyer
+                    </button>
+                </div>
+
+                <div class="buyer-item">
+                    <h3>Green Nut Traders</h3>
+                    <p>Location: Kakinada</p>
+                    <p>Rating: ⭐ 4.2/5</p>
+
+                    <button class="btn" type="button"
+                        onclick="alert('Contact feature coming soon!')">
+                        Contact Buyer
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 AgriCashew. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../static/js/script.js"></script>
+
+</body>
+</html>
